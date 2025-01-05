@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARTWORKS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="cursor"></div>
+    <div class="logo"></div>
+    <div class="header">
+        <div class="letters">
+            <div>a</div>
+            <div>r</div>
+            <div>t</div>
+            <div>w</div>
+        </div>
+        <div class="letters">
+            <div>o</div>
+            <div>r</div>
+            <div>k</div>
+            <div>s</div>
+        </div>
+    </div>
+    <div class="website-content">
+        <div class="image-holder">
+            <img src="/img/3.jpg" alt="">
+        </div>
+        <div class="content-holder">
+            <div class="row">
+                <h1>History</h1>
+            </div>
+
+            <div class="row">
+                <div class="img">
+                    <img src="/img/6.jpg" alt="">
+                </div>
+            </div>
+            <div class="row">
+                <div class="img">
+                    <img src="/img/7.jpg" alt="">
+                </div>
+            </div>
+            <div class="row">
+                <div class="img">
+                    <img src="/img//8.jpg" alt="">
+                </div>
+            </div>
+
+            <div class="row">
+                <p>The history of photography & fine arts is full of beautiful masterpieces. Expressions have been captured and shared throughout the history. Each and every work of art encapsulates a unique moment frozen in time, offering a glimpse into the lives, emotions, and struggles of those who came before us.
+                </p>
+            </div>
+
+
+            <div class="row">
+                <div class="img">
+                    <img src="/img/9.jpg" alt="">
+                </div>
+            </div>
+            <div class="row">
+                <div class="img">
+                    <img src="/img/7.jpg" alt="">
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="row">
+                    <p>Photography and fine arts, in their essence, are not merely confined to documenting events or portraying aesthetics; they hold within them a profound narrative that transcends time and space. From the captivating black and white landscapes captured by the renowned Hiroji Kubota to the enigmatic urban scenes portrayed by Yuichi Hibi, or Chiharu Shiota's mesmerizing installations, intertwined with profound emotions, that take viewers on a journey of self-reflection and introspection, “Artworks” presents a kaleidoscope of artistic expressions that transcend borders and cultures.</p>
+                </div>
+                <div class="row">
+                    <p>As we move forward, the history of photography and fine arts will undoubtedly be enriched by groundbreaking innovations and ever-evolving expressions. Through the lens of artistic vision, the beauty and complexities of the human experience will continue to be celebrated and shared, shaping our understanding of the world and the people in it.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-holder1">
+            <div class="row">
+                <h1>ARTISTS</h1>
+                <span class="star">*</span>
+            </div>
+            <hr>
+            <div class="ccp">
+                <p>contemporary</p>
+                <p>conceptual</p>
+                <p>performance</p>
+                <p class="year">(2024)</p>
+            </div>
+
+            <div class="row">
+                <div class="column1">
+                    <div class="row">
+                        <div class="img">
+                            <img src="/img/7.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="img">
+                            <img src="/img//6.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="column2"></div>
+                <div class="img">
+                    <img src="/img/9.jpg" alt="">
+                </div>
+            </div>
+            
+
+            <div class="row">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione fugit officiis expedita ad repellat nostrum voluptates delectus sequi autem pariatur.
+                </p>
+            </div>
+<!-- 
+            <div class="row">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione fugit officiis expedita ad repellat nostrum voluptates delectus sequi autem pariatur.
+                </p>
+            </div> -->
+        </div>
+    </div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    function animateLogo() {
+        gsap.fromTo('.logo', { opacity: 0 }, { opacity: 1, duration: 1 });
+    }
+
+    animateLogo();
+
+    document.addEventListener("DOMContentLoaded",function(){
+        const contentHolderHeight = document.querySelector(".content-holder").offsetHeight;
+        const contentHolderHeight1 = document.querySelector(".content-holder1").offsetHeight;
+        const imgHolderHeight = window.innerHeight;
+        const additionalScrollHeight = window.innerHeight;
+
+        const totalBodyHeight = contentHolderHeight + contentHolderHeight1 + imgHolderHeight + additionalScrollHeight;
+        document.body.style.height = `${totalBodyHeight}px`
+    })
+
+    ScrollTrigger.create({
+        trigger:".website-content",
+        start: "-0.1% top",
+        end:"bottom bottom",
+        onEnter : () => {
+            gsap.set(".website-content", {position:'absolute',top: "195%"});
+        },
+        onLeaveBack : () => {
+            gsap.set(".website-content", {position:'fixed',top: "0"});
+        }
+    })
+
+    gsap.from(".row h1",{
+        opacity: 0,
+        scrollTrigger: {
+            trigger: ".row h1",
+            start:"top 80%",
+            end:"bottom bottom",
+            scrub: 1,
+            toggleActions: "play none none reverse",
+            
+        }
+    })
+
+    
+
+    gsap.to(".header .letters:first-child",{
+        x: () => -innerWidth * 3,
+        scale: 10,
+        ease: "power2.inOut",
+        scrollTrigger: {
+            start: "top top",
+            end: `+=200%`,
+            scrub:1
+        }
+    });
+    
+
+    gsap.to(".header .letters:last-child",{
+        x: () => innerWidth * 3,
+        scale: 10,
+        ease: "power2.inOut",
+        scrollTrigger: {
+            start: "top top",
+            end: `+=200%`,
+            scrub:1
+        }
+    })
+
+    gsap.to(".image-holder", {
+        rotation: 0,
+        clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)',
+        ease: "power2.inOut",
+        scrollTrigger: {
+            start: "top top",
+            end: `+=200%`,
+            scrub:1,
+        }
+    })
+
+    gsap.to(".image-holder img", {
+        scale : 1,
+        ease: "power2.inOut",
+        scrollTrigger: {
+            start: "top top",
+            end: `+=200%`,
+            scrub:1,
+        }
+    })
+
+    gsap.utils.toArray('.img').forEach((img, index) => {
+        gsap.from(img, {
+            y: "100%", // Move from the bottom of the page
+            opacity: 0,
+            scrollTrigger: {
+                trigger: img,
+                start: "top bottom", // When the top of the image hits the bottom of the viewport
+                end: "bottom bottom", // When the bottom of the image hits the bottom of the viewport
+                toggleActions: "play none none reverse",
+                // markers: true // For debugging, you can remove this in the production
+            }
+        });
+    });
+
+
+    document.addEventListener('mousemove', function(e) {
+    var cursor = document.getElementById('cursor');
+    cursor.style.left = e.pageX + 'px';
+    cursor.style.top = e.pageY + 'px';
+});
+
+
+</script>
+</body>
+</html>
