@@ -23,7 +23,7 @@
 
 | Home | History 1 |
 |------|-----------|
-| ![Home](./scrennshots/home.png) | ![History1](./scrennshots/history1.png) |
+| ![Home](./screenshots/home.png) | ![History1](./scrennshots/history1.png) |
 
 | History 2 | Artists |
 |-----------|---------|
