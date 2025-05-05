@@ -23,8 +23,8 @@
 
 | Home | History 1 |
 |------|-----------|
-| ![Home](./screenshots/home.png) | ![History1](./scrennshots/history1.png) |
+| ![Home](./screenshots/home.png) | ![History1](./screenshots/history1.png) |
 
 | History 2 | Artists |
 |-----------|---------|
-| ![History2](./scrennshots/history2.png) | ![Artists](./scrennshots/artists.png) |
+| ![History2](./screenshots/history2.png) | ![Artists](./screenshots/artists.png) |
